@@ -84,7 +84,7 @@ int number_of_threads_input()
 Prints the name and ID of a given (struct thread_data) pointer.  */
 void *print_thread_info(void *thread_data_pointer)
 {
-    //Type casting.
+    //Type casting
     struct thread_data *current_thread = (struct thread_data *) thread_data_pointer;
 
     printf("\nI'm THREAD %d and my name is %u\n", current_thread->id, (unsigned int) current_thread);
