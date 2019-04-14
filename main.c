@@ -20,7 +20,7 @@ struct thread_data
 
 //Declaration
 int number_of_threads_input();
-void *print_thread_info(void *thread_data);
+void *print_thread_info(void *thread_data_pointer);
 
 
 //Main
@@ -45,9 +45,9 @@ int main()
 
     //Joining threads
     for (int counter = 0; counter < number_of_threads; counter++)
-    {
+        {
         pthread_join(thread_data_array[counter].thread, NULL);
-    }
+        }
 
     printf("\nAnswering the assignment question:\n\n"
            "The difference between gettid() and the pthread_self() is that, while POSIX thread IDs are assigned\n"
@@ -82,10 +82,10 @@ int number_of_threads_input()
 
 /*
 Prints the name and ID of a given (struct thread_data) pointer.  */
-void *print_thread_info(void *thread_data)
+void *print_thread_info(void *thread_data_pointer)
 {
     //Type casting.
-    struct thread_data *current_thread = (struct thread_data *) thread_data;
+    struct thread_data *current_thread = (struct thread_data *) thread_data_pointer;
 
     printf("\nI'm THREAD %d and my name is %u\n", current_thread->id, (unsigned int) current_thread);
     printf("Using pthread_self, my ID is %ld\n", pthread_self());
