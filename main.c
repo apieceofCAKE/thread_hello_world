@@ -87,8 +87,8 @@ void *print_thread_info(void *thread_data_pointer)
     //Type casting
     struct thread_data *current_thread = (struct thread_data *) thread_data_pointer;
 
-    printf("\nI'm THREAD %d and my name is %u\n", current_thread->id, (unsigned int) current_thread);
-    printf("Using pthread_self, my ID is %ld\n", pthread_self());
+    printf("\nI'm THREAD %d and, printing myself, we have %lu\n", current_thread->id, current_thread->thread);
+    printf("Using pthread_self, my ID is %lu\n", pthread_self());
     printf("Using gettid(), my ID is %ld\n", syscall( __NR_gettid));
     printf("\n");
 
