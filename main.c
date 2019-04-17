@@ -57,7 +57,7 @@ int main()
            "be reused. On the other hand, the kernel TID isn't portable and is unique at that time within the \n"
            "the process and across the system. \n\n");
 
-    printf("\nFreeing memory...\n");
+    printf("\nFreeing memory...\n\n");
     free(thread_data_array);
 
     return 0;
